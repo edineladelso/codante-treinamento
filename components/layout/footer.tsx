@@ -11,12 +11,13 @@ export default function Footer() {
     >
       <div className="max-w-sm">
         <Image
-          src="/img/logowhite.png"
+          src="/img/starbdarkFinal.webp"
           alt="Logo da Star B"
-          width={80}
-          height={40}
+          width={150}
+          height={50}
+          className="rounded-xl bg-amber-50 p-1.5"
         />
-        <p className="mt-2 text-sm font-extralight">
+        <p className="mt-2 font-extralight text-lg">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
           voluptatibus ea vitae debitis eius reprehenderit dolor adipisci
         </p>

@@ -4,15 +4,15 @@ import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   return (
-    <nav className="flex max-w-full justify-between items-center px-18 py-5">
+    <nav className="flex max-w-full items-center justify-between rounded-lg px-18 py-5">
       <Image
-        src="/img/logon.png"
+        src="/img/starbdarkFinal.webp"
         alt="Logo da Star B"
-        width={100}
+        width={150}
         height={80}
         className="m-0 p-0"
       />
-      <ul className="flex flex-row justify-end gap-10">
+      <nav className="flex flex-row justify-end gap-10 text-xl">
         <a href="/" className={cn(buttonVariants({ variant: "link" }))}>
           Home
         </a>
@@ -28,7 +28,7 @@ export default function Navbar() {
         >
           Cadastrar Vagas
         </a>
-      </ul>
+      </nav>
     </nav>
   );
 }
