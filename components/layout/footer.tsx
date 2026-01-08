@@ -4,17 +4,17 @@ import { Instagram, Github, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer
-      className="bg-accent-foreground text-white
+      className="bg-black text-white
     flex justify-between max-w-full w-full
-    py-6 m-auto px-30
+    py-4 m-auto px-30
     "
     >
       <div className="max-w-sm">
         <Image
           src="/img/logowhite.png"
           alt="Logo da Star B"
-          width={100}
-          height={80}
+          width={80}
+          height={40}
         />
         <p className="mt-2 text-sm font-extralight">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse

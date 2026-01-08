@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   return (
-    <nav className="flex max-w-full m-auto justify-between items-center px-10 py-5">
+    <nav className="flex max-w-full justify-between items-center px-18 py-5">
       <Image
-        src="/img/logoblack.png"
+        src="/img/logon.png"
         alt="Logo da Star B"
         width={100}
         height={80}
