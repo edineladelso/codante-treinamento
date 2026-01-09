@@ -6,27 +6,27 @@ export default function Navbar() {
   return (
     <nav className="flex max-w-full items-center justify-between rounded-lg px-18 py-5">
       <Image
-        src="/img/starbdarkFinal.webp"
+        src="/img/starbPerfection.webp"
         alt="Logo da Star B"
         width={150}
         height={80}
         className="m-0 p-0"
       />
-      <nav className="flex flex-row justify-end gap-10 text-xl">
-        <a href="/" className={cn(buttonVariants({ variant: "link" }))}>
+      <nav className="flex flex-row justify-end gap-10">
+        <a href="/" className={cn(buttonVariants({ variant: "link" }), "text-lg font-medium")}>
           Home
         </a>
-        <a href="/sobre" className={cn(buttonVariants({ variant: "link" }))}>
+        <a href="/sobre" className={cn(buttonVariants({ variant: "link" }), "text-lg font-medium")}>
           Sobre
         </a>
-        <a href="/vagas" className={cn(buttonVariants({ variant: "link" }))}>
-          Vagas
+        <a href="/livros" className={cn(buttonVariants({ variant: "link" }), "text-lg font-medium")}>
+          Livros
         </a>
         <a
-          href="/vagas/cadastro"
-          className={cn(buttonVariants({ variant: "link" }))}
+          href="/livros/artigo"
+          className={cn(buttonVariants({ variant: "link" }), "text-lg font-medium")}
         >
-          Cadastrar Vagas
+          Artigos
         </a>
       </nav>
     </nav>

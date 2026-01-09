@@ -1,4 +1,4 @@
-export default function VagasLayout({
+export default function LivrosLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

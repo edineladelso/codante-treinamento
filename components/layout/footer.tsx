@@ -22,11 +22,23 @@ export default function Footer() {
           voluptatibus ea vitae debitis eius reprehenderit dolor adipisci
         </p>
       </div>
-      <div className="flex gap-4 ">
-        <Instagram className="cursor-pointer hover:text-blue-400"/>
-        <Github className="cursor-pointer hover:text-blue-400"/>
-        <Mail className="cursor-pointer hover:text-blue-400"/>
-      </div>
+      <ul className="flex gap-4 items-center">
+        <li>
+          <a href="#">
+            <Instagram className="cursor-pointer hover:text-blue-400"/>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Github className="cursor-pointer hover:text-blue-400"/>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <Mail className="cursor-pointer hover:text-blue-400"/>
+          </a>
+        </li>
+      </ul>
     </footer>
   );
 }
