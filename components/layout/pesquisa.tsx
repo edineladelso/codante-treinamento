@@ -1,0 +1,76 @@
+"use client";
+
+import * as React from "react";
+import { Search } from "lucide-react";
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command";
+import { Button } from "../ui/button";
+
+export default function Pesquisa() {
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpen((open) => !open);
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
+  return (
+    <> 
+    <Button
+     onClick={() => setOpen(true)}
+     className="flex items-center gap-2 bg- border text-muted-foreground hover:text-foreground transition-colors"
+     >
+      <Search className="w-5 h-5"/>
+      <span className="hidden lg:inline-flex text-sm font-medium">
+        Pesquisar aqui...
+        </span>
+      <kbd 
+      className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded bg-gray-700 p-2.5 font-mono text-[10px] font-medium text-white opacity-100 lg:inline-flex"
+      >
+        <span className="text-xs">⌘k</span>
+      </kbd>
+    </Button>
+    <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandInput placeholder="Comando ou pesquisa..." />
+      <CommandList>
+        <CommandEmpty>Sem resultado encontrado.</CommandEmpty>
+        <CommandGroup heading="Sugestões">
+          <CommandItem>Matematica</CommandItem>
+          <CommandItem>Engenharia</CommandItem>
+          <CommandItem>Software</CommandItem>
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading="Definições">
+            <CommandItem>
+              Perfil
+              <CommandShortcut>⌘P</CommandShortcut>
+            </CommandItem>
+            <CommandItem>
+              Notificações
+              <CommandShortcut>⌘N</CommandShortcut>
+            </CommandItem>
+            <CommandItem>
+              Definições
+              <CommandShortcut>⌘S</CommandShortcut>
+            </CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
+    </>
+  );
+}
