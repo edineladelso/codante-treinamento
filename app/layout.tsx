@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 
 export const metadata: Metadata = {
   title: "StarB Vagas",
@@ -16,10 +18,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-pt">
-      <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 flex">{children}</main>
-        <Footer />
+      <body >
+        <SidebarProvider>
+          <AppSidebar />
+          <div className="flex min-h-screen w-full flex-col">
+            
+            <Navbar />
+            <main className="flex flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );

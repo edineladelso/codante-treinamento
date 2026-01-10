@@ -33,14 +33,15 @@ export default function Pesquisa() {
     <> 
     <Button
      onClick={() => setOpen(true)}
+     size={"sm"}
      className="flex items-center gap-2 bg- border text-muted-foreground hover:text-foreground transition-colors"
      >
-      <Search className="w-5 h-5"/>
+      <Search className="w-4 h-5"/>
       <span className="hidden lg:inline-flex text-sm font-medium">
-        Pesquisar aqui...
+        Pesquisar...
         </span>
       <kbd 
-      className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded bg-gray-700 p-2.5 font-mono text-[10px] font-medium text-white opacity-100 lg:inline-flex"
+      className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded bg-gray-700 p-2 font-mono text-[10px] font-medium text-white opacity-100 lg:inline-flex"
       >
         <span className="text-xs">⌘k</span>
       </kbd>

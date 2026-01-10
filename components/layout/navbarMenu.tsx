@@ -17,39 +17,44 @@ import {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Matematica",
+    href: "/livros/matematica",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Livros e materiais sobre diversos ramos da matemática, desde álgebra, cálculo avançado até analise matemática.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Física",
+    href: "/livros/fisica",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Livros e materiais sobre diversos ramos da física, desde mecânica clássica até física quântica.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Mecanica",
+    href: "/livros/mecanica",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Livros e materiais sobre diversos ramos da mecânica, desde estática até dinâmica.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Eletrotécnica",
+    href: "/livros/eletrotecnica",
+    description: "Livros e materiais sobre diversos ramos da eletrotécnica.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Automação e controle",
+    href: "/livros/automacaoecontrole",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "Livros e materiais sobre diversos ramos da automação e controle.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "Programação",
+    href: "/livros/programacao",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "Livros e materiais sobre diversos ramos da programação.",
+  },
+  {
+    title: "Engenharia",
+    href: "/livros/engenharia",
+    description: "Livros e materiais sobre diversos ramos da engenharia.",
   },
 ]
 
@@ -70,7 +75,7 @@ export function NavigationMenuDemo() {
                     href="/"
                   >
                     <div className="mb-2 text-lg font-medium sm:mt-4">
-                      Bivlioteca Star B
+                      Biblioteca Star B
                     </div>
                     <p className="text-muted-foreground text-sm leading-tight">
                       A biblioteca definitiva para estudantes e profissionais de
@@ -92,6 +97,22 @@ export function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <NavigationMenuTrigger>Livros</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuTrigger>Softwares</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -108,7 +129,7 @@ export function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>Documentaçao</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Docs</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[300px] gap-4">
               <li>
@@ -165,13 +186,13 @@ export function NavigationMenuDemo() {
                   <Link href="/livros">Livros</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">Documentaçao</Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
                   <Link href="/softwares">Softwares</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="/livros/artigos">Artigos</Link>
+                </NavigationMenuLink>
+                                <NavigationMenuLink asChild>
+                  <Link href="/livros/artigos/cursos">Cursos</Link>
                 </NavigationMenuLink>
               </li>
             </ul>
